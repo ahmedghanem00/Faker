@@ -91,7 +91,7 @@ class Person extends \Faker\Provider\Person
         $centuryId = ((int) date("y", $randomBirthDateTimestamp)) >= 2000 ? 3 : 2;
         $fullBirthDate = date("ymd", $randomBirthDateTimestamp);
         $governorateId = Address::governorateId();
-        $birthRegistrationSequence = rand(1, 500);
+        $birthRegistrationSequence = mt_rand(1, 500);
 
         if ($gender === static::GENDER_MALE) {
             $birthRegistrationSequence = $birthRegistrationSequence | 1; # Convert to the nearest odd number
@@ -100,7 +100,7 @@ class Person extends \Faker\Provider\Person
         }
 
         $birthRegistrationSequence = str_pad($birthRegistrationSequence, 4, '0', STR_PAD_LEFT);
-        $randomCheckDigit = rand(1, 9);
+        $randomCheckDigit = mt_rand(1, 9);
 
         return $centuryId . $fullBirthDate . $governorateId . $birthRegistrationSequence . $randomCheckDigit;
     }
