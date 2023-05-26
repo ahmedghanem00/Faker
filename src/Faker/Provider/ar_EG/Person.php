@@ -88,7 +88,7 @@ class Person extends \Faker\Provider\Person
     {
         $randomBirthDateTimestamp = rand(strtotime("1950-Jan-10"), strtotime("2005-Dec-25"));
 
-        $centuryId = ((int) date("y", $randomBirthDateTimestamp)) >= 2000 ? 3 : 2;
+        $centuryId = ((int) date("Y", $randomBirthDateTimestamp)) >= 2000 ? 3 : 2;
         $fullBirthDate = date("ymd", $randomBirthDateTimestamp);
         $governorateId = Address::governorateId();
         $birthRegistrationSequence = mt_rand(1, 500);
