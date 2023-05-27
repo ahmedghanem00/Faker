@@ -2,7 +2,6 @@
 
 namespace Faker\Test\Provider\ar_EG;
 
-use Faker\Calculator\Luhn;
 use Faker\Provider\ar_EG\Person;
 use Faker\Test\TestCase;
 
